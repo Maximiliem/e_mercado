@@ -58,9 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Max add: contenido respectivo para hacer los controles gráficos de envío y dirección
   function addGraphicsControls() {
-    const anotherRow = document.createElement('div');
-    const tipoyDireccion = document.getElementById("tipoyDireccion");
-    anotherRow.innerHTML = `
+    const formShipping = document.getElementById("formShipping");
+    formShipping.innerHTML = `
       <br>
       <div class="row">
         <!--INGRESO DE DATOS DE DIRECCIÓN, NÚMERO Y CALLE-->
@@ -103,8 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>`;
 
-    tipoyDireccion.appendChild(anotherRow);
   }
 
   addGraphicsControls();
+
+  const formShipping = document.getElementById('formShipping');
+  const btnForm = document.getElementById('comprar');
+
+  btnForm.addEventListener('click', function() {
+    formShipping.submit();
+  });
 });
